@@ -990,7 +990,7 @@ for X in $(cat "${CLEAR_PATH}" |sed 's/rm -rf//g' |sed 's/rm -fr//g' |sed 's/\r/
 done
 #rename -v "s/^openwrt/${Gujian_Date}-${SOURCE}/" *
 mv *generic-squashfs-combined.img.gz OpenWrt-${matrixtarget}-${Gujian_Date}.img.gz
-rm openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+rm *-generic-squashfs-combined-efi.img.gz
 
 
 cd ${HOME_PATH}
