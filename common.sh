@@ -1057,7 +1057,8 @@ function Diy_Notice() {
 TIME y "第一次用我仓库的，请不要拉取任何插件，先SSH进入固件配置那里看过我脚本实在是没有你要的插件才再拉取"
 TIME y "拉取插件应该单独拉取某一个你需要的插件，别一下子就拉取别人一个插件包，这样容易增加编译失败概率"
 TIME r "修改IP、DNS、网关，请输入命令：openwrt"
-TIME r "在线更新命令：openwrt，工具箱输入命令：tools,安装青龙输入qinglong"
+#TIME r "在线更新命令：openwrt，工具箱输入命令：tools,安装青龙输入qinglong"
+TIME r "在线更新命令：openwrt，工具箱输入命令：tools"
 TIME r ""
 TIME r ""
 TIME g "CPU性能：8370C > 8272CL > 8171M > E5系列"
@@ -1189,7 +1190,8 @@ elif [[ "${REGULAR_UPDATE}" == "true" ]] && [[ -n "${REPO_TOKEN}" ]]; then
   TIME b "云端路径: ${Github_Release}"
   TIME g "《编译成功后，会自动把固件发布到指定地址，然后才会生成云端路径》"
   TIME g "《普通的那个发布固件跟云端的发布路径是两码事，如果你不需要普通发布的可以不用打开发布功能》"
-  TIME g "修改IP、DNS、网关或者在线更新，请输入命令：openwrt或者tools,安装青龙请输入qinglong"
+#  TIME g "修改IP、DNS、网关或者在线更新，请输入命令：openwrt或者tools,安装青龙请输入qinglong"
+  TIME g "修改IP、DNS、网关或者在线更新，请输入命令：openwrt或者tools"
   echo
 else
   echo
