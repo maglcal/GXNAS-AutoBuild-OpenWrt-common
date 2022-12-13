@@ -273,7 +273,8 @@ echo "正在执行：更新插件源,让源码更多插件存在"
 # 拉库和做标记
 
 ./scripts/feeds clean
-./scripts/feeds update -a > /dev/null 2>&1
+#./scripts/feeds update -a > /dev/null 2>&1
+./scripts/feeds update -a
 
 case "${REPO_BRANCH}" in
 master)
