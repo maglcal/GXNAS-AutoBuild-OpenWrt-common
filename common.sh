@@ -272,20 +272,14 @@ function Diy_clean() {
 echo "正在执行：更新插件源,让源码更多插件存在"
 # 拉库和做标记
 
-cd ${HOME_PATH}
-if [[ -n "${BENDI_VERSION}" ]]; then
-  ./scripts/feeds clean
-  ./scripts/feeds update -a
-else
-  ./scripts/feeds clean
-  ./scripts/feeds update -a > /dev/null 2>&1
-fi
+./scripts/feeds clean
+./scripts/feeds update -a > /dev/null 2>&1
 
 case "${REPO_BRANCH}" in
 master)
   
   # 删除重复插件（LEDE）
-  find . -name 'luci-theme-argon' -o -name 'luci-app-argon-config' -o -name 'mentohust' -o -name 'luci-app-netdata' | xargs -i rm -rf {}
+  find . -name 'luci-theme-argon' -o -name 'luci-app-argon-config' -o -name 'mentohust' | xargs -i rm -rf {}
   find . -name 'luci-app-wrtbwmon' -o -name 'wrtbwmon' -o -name 'luci-app-eqos' | xargs -i rm -rf {}
   find . -name 'adguardhome' -o -name 'luci-app-adguardhome' -o -name 'luci-app-wol' | xargs -i rm -rf {}
   find . -name 'mosdns' -o -name 'luci-app-mosdns' | xargs -i rm -rf {}
@@ -302,11 +296,11 @@ master)
   find . -name 'luci-app-smartdns' -o -name 'smartdns' | xargs -i rm -rf {}
 
 ;;
-openwrt-18.06-k5.4)
+openwrt-18.06)
 
   # 删除重复插件（天灵18.06）
   find . -name 'luci-app-argon-config' -o -name 'luci-theme-argon' -o -name 'luci-theme-argonv3' -o -name 'luci-app-eqos' | xargs -i rm -rf {}
-  find . -name 'luci-app-cifs' -o -name 'luci-app-openclash' -o -name 'luci-app-netdata' | xargs -i rm -rf {}
+  find . -name 'luci-app-cifs' -o -name 'luci-app-openclash' | xargs -i rm -rf {}
   find . -name 'luci-app-wrtbwmon' -o -name 'wrtbwmon' -o -name 'luci-app-wol' | xargs -i rm -rf {}
   find . -name 'luci-app-adguardhome' -o -name 'adguardhome' -o -name 'luci-theme-opentomato' | xargs -i rm -rf {}
 
@@ -320,6 +314,7 @@ openwrt-21.02)
 ;;
 esac
 }
+
 
 function Diy_conf() {
 case "${REPO_BRANCH}" in
