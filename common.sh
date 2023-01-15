@@ -548,6 +548,8 @@ else
   export amlogic_kernel="5.15.25 -a true"
   export rootfs_size="960"
 fi
+export kernel_repo="https://github.com/ophub/kernel/tree/main/pub"
+export gh_token="${REPO_TOKEN}"
 # 开始打包
 cd ${GITHUB_WORKSPACE}/amlogic
 sudo chmod +x make
